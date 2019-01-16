@@ -1,0 +1,9 @@
+cron 'audit_report' do
+      minute "0"
+      hour "0"
+      day "28-31"
+      month '*'
+      command "[ $(date +\%d -d tomorrow) = 01 ] && /intuit/commerce/audit_report.sh >> /var/log/audit_report.log 2>&1"
+      user    'root'
+      only_if {File.exists?('/intuit/commerce/audit_report.sh')}
+end
