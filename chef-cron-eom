@@ -1,5 +1,5 @@
 #### [ $(date +\%d -d tomorrow) = 01 ] helps to find what is the last day in the month
-cron 'audit_report' do
+cron 'abc_report' do
       minute "0"
       hour "0"
       day "28-31"
